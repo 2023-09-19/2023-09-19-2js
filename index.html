@@ -10,17 +10,40 @@
 <body>
 
   <script>
-    /*
-      원시형자료 vs 참조형자료
-      원시형자료는 메모리에 값자체가 담기는 자료 (문자열,숫자,boolean,undefined)
-
-      참조형자료 (배열, 객체, null)
-      
-      참조형자료는 메모리에 값이 담기는게 아닌 값의 참조위치값이 담김
-      해당값으로 실행할수 있는 여러 기능들까지 같이 참조됨
-      참조형자료는 메모리에 callstack가 생기고 값자체에 heap memory가 생성됨
-      heap메모리에 있는 값의 위치값이 callstack메모리에 참조됨
+    /*  
+    모든 객체에는 prototype 이라는 공통의 저장공간이 있고 
+    prototype안에는 해당 참조형 자료가 활용할 수 있는 다양한 메서드를 담고 있음
     */
+
+    let text = 'hello'
+    let num = 3;
+    let inFemale = false;
+    let err;
+
+    let colors = ['red', 'green', 'blue'];
+    let student = {
+      name: '홍길동',
+      age: 19,
+      inFemale: false,
+      interests: ['game', 'movie', 'travel']
+    }
+    let score = null;
+
+    console.log(typeof text)
+    console.log(typeof num)
+    console.log(typeof inFemale)
+    console.log(typeof err)
+    console.log(typeof colors)
+    console.log(typeof student)
+    console.log(typeof score)
+
+    console.log(text)
+    console.log(num)
+    console.log(inFemale)
+    console.log(err)
+    console.log(colors)
+    console.log(student)
+    console.log(score)
   </script>
 
 </body>
