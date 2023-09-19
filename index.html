@@ -10,34 +10,19 @@
 <body>
 
   <script>
-    let text = 'hello'
-    let num = 3;
-    let inFemale = false;
-    let err;
+    /*
+    전개연산자
+    - 기존의 참조형 자료를 값을 다 꺼내서 펼친뒤 deep copy
+    */
 
-    let text2 = text;
-
-    text2 = 'world';
-    console.log(text2);
-    console.log(text);
-
-    let colors = ['red', 'green', 'blue']; // 해당값을 가리키는 링크1
-    let colors2 = colors; // 해당값을 가리키는 링크2
-    //결국 colors와colors2 에 있는 참조링크는 값은 다르지만 결국 같은 값을 참조하기 있기 때문에
-    //복사된 변수의 값을 변경해도 원본의 값이 같이 변경됨
+    let colors = ['red', 'green', 'blue'];
+    let colors2 = [...colors]; //기존의 참조형 자료값을 꺼내서 deep copy한 다음에 새로운 변수에 할당
     colors2[0] = 'hotpink';
-    console.log(colors2)
-    console.log(colors)
-    //수정해도 원본배열도 값 변경되어서 원본데이터에 훼손이 일어남 (불변성 유지 안됨)
+    console.log('colors', colors);
+    console.log('colors2', colors2);
 
-    let student = {
-      name: '홍길동',
-      age: 19,
-      inFemale: false,
-      interests: ['game', 'movie', 'travel']
-    }
-    let score = null;
-
+    //위와 같이 원본을 훼손하지 않으면서 복사본을 만드는 불변성이 프론트엔드 개발에서 중요한 이유
+    //리액트에서는 원본과 변경된 복사본이 같이 잇어야지 해당 차이점을 인지해서 화면을 변경해줌
   </script>
 
 </body>
