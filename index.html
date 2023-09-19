@@ -10,25 +10,30 @@
 <body>
 
   <script>
-    //외부 서버데이터를 가져와야 되는 경우
-    //초기에 변수를 선언하는 해야 되는데 담을 값이 없을 경우
+    //비구조화할당, 구조분해할당 (Destructuring)
+    //배열이나 객체같은 반복적인 값을 한번에 변수로 추출
+    //배열값을 비구조화할당시에는 변수명은 아무거나 가능
 
-    //객체의 값이 없을때 바로 에러가 뜨면서 다음의 구문이 실행안됨
-    //해당 객체의 값이 없을때에는 일단 무시하고 넘어간뒤 해당값이 있을때 호출
-    //optional chaining
+    const colors = ['red', 'green', 'blue'];
+    // const colors1 = colors[0];
+    // const colors2 = colors[1];
+    // const colors3 = colors[2];
 
-    let obj = null;
-    //특정 변수의 값이 없을때 대체값 할당
-    //해당 객체의 없는 property 값을 호출하면 바로 에러가 뜨므로
-    //일단 optinal chaining으로 에러를 무시하고 넘어간뒤 디폴트값을 대신 적용
-    console.log(obj?.name || 'defalut');
+    const [color1, color2, color3] = colors;
 
-    obj = {
-      name: 'Andy',
+    console.log(color1)
+    console.log(color2)
+    console.log(color3)
+
+    const student1 = {
+      name: 'David',
+      age: 20,
+      address: 'Seou;'
     }
 
-    console.log(obj.name);
-
+    const { name, age: age2, address } = student1;
+    //객체값을 비구조화할당시에는 무조건 property key명으로만 변수 추출 가능
+    console.log(age2)
   </script>
 
 </body>
