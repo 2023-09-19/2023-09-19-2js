@@ -10,29 +10,28 @@
 <body>
 
   <script>
-    const studentInfo = [
-      { name: 'David', age: 20, hobby: 'game' },
-      { name: 'Emaily', age: 22, hobby: 'movie' },
-      { name: 'Michel', age: 18 }
-    ];
+    /*
+      forEach vs map
+    */
+    const colors = ['red', 'green', 'blue'];
 
-    //parameter(매개변수): 함수안쪽에 특정 값을 전달하기 위한 통로명
-    //argunemt(인수): 매개변수를 통해서 실제적으로 전달하는 값
-    //파라미터의 인수값으로 전달되는 값이 없을때 default parameter 설정가능
-    //전달되는 인수값은 객체하나인데 객체안의 property값을 추출해서 내부로 전달
-    function showInfo({ name, age, hobby = '없음' }) {
-      console.log(`해당학생의 이름은 ${name}이며 나이는 ${age}입니다. 그리고 취미는 ${hobby} 입니다 `)
-    }
+    //반복기능만 있음
+    const result1 = colors.forEach((data, index) => {
+      console.log(data);
+      console.log(index);
+    })
+    console.log('result1', result1)
 
-    //총 3개의 인수가 전달
-    function showInfo2(name, age, hobby) {
-      console.log(`해당학생의 이름은 ${name}이며 나이는 ${age}입니다. 그리고 취미는 ${hobby} 입니다 `)
-    }
-    showInfo2('Andy', 30, 'music')
+    //반복기능 + 기존배열값을 deep copy반환
+    //map은기존의 원본 배열을 훼손시키지 않으면서 새로운 배열을 반환하는 불변성 유지 가능
+    const result2 = colors.map((data, index) => {
+      console.log(data);
+      console.log(index);
+      return data;
+    })
+    console.log('result2', result2)
 
-    showInfo(studentInfo[0])
-    showInfo(studentInfo[1])
-    showInfo(studentInfo[2])
+    result2[0] = 'hotpink';
 
   </script>
 
