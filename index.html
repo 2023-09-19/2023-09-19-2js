@@ -10,17 +10,26 @@
 <body>
 
   <script>
-    /*  
-    모든 객체에는 prototype 이라는 공통의 저장공간이 있고 
-    prototype안에는 해당 참조형 자료가 활용할 수 있는 다양한 메서드를 담고 있음
-    */
-
     let text = 'hello'
     let num = 3;
     let inFemale = false;
     let err;
 
-    let colors = ['red', 'green', 'blue'];
+    let text2 = text;
+
+    text2 = 'world';
+    console.log(text2);
+    console.log(text);
+
+    let colors = ['red', 'green', 'blue']; // 해당값을 가리키는 링크1
+    let colors2 = colors; // 해당값을 가리키는 링크2
+    //결국 colors와colors2 에 있는 참조링크는 값은 다르지만 결국 같은 값을 참조하기 있기 때문에
+    //복사된 변수의 값을 변경해도 원본의 값이 같이 변경됨
+    colors2[0] = 'hotpink';
+    console.log(colors2)
+    console.log(colors)
+    //수정해도 원본배열도 값 변경되어서 원본데이터에 훼손이 일어남 (불변성 유지 안됨)
+
     let student = {
       name: '홍길동',
       age: 19,
@@ -29,21 +38,6 @@
     }
     let score = null;
 
-    console.log(typeof text)
-    console.log(typeof num)
-    console.log(typeof inFemale)
-    console.log(typeof err)
-    console.log(typeof colors)
-    console.log(typeof student)
-    console.log(typeof score)
-
-    console.log(text)
-    console.log(num)
-    console.log(inFemale)
-    console.log(err)
-    console.log(colors)
-    console.log(student)
-    console.log(score)
   </script>
 
 </body>
