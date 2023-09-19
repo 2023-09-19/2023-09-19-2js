@@ -10,30 +10,30 @@
 <body>
 
   <script>
-    //비구조화할당, 구조분해할당 (Destructuring)
-    //배열이나 객체같은 반복적인 값을 한번에 변수로 추출
-    //배열값을 비구조화할당시에는 변수명은 아무거나 가능
+    const studentInfo = [
+      { name: 'David', age: 20, hobby: 'game' },
+      { name: 'Emaily', age: 22, hobby: 'movie' },
+      { name: 'Michel', age: 18 }
+    ];
 
-    const colors = ['red', 'green', 'blue'];
-    // const colors1 = colors[0];
-    // const colors2 = colors[1];
-    // const colors3 = colors[2];
-
-    const [color1, color2, color3] = colors;
-
-    console.log(color1)
-    console.log(color2)
-    console.log(color3)
-
-    const student1 = {
-      name: 'David',
-      age: 20,
-      address: 'Seou;'
+    //parameter(매개변수): 함수안쪽에 특정 값을 전달하기 위한 통로명
+    //argunemt(인수): 매개변수를 통해서 실제적으로 전달하는 값
+    //파라미터의 인수값으로 전달되는 값이 없을때 default parameter 설정가능
+    //전달되는 인수값은 객체하나인데 객체안의 property값을 추출해서 내부로 전달
+    function showInfo({ name, age, hobby = '없음' }) {
+      console.log(`해당학생의 이름은 ${name}이며 나이는 ${age}입니다. 그리고 취미는 ${hobby} 입니다 `)
     }
 
-    const { name, age: age2, address } = student1;
-    //객체값을 비구조화할당시에는 무조건 property key명으로만 변수 추출 가능
-    console.log(age2)
+    //총 3개의 인수가 전달
+    function showInfo2(name, age, hobby) {
+      console.log(`해당학생의 이름은 ${name}이며 나이는 ${age}입니다. 그리고 취미는 ${hobby} 입니다 `)
+    }
+    showInfo2('Andy', 30, 'music')
+
+    showInfo(studentInfo[0])
+    showInfo(studentInfo[1])
+    showInfo(studentInfo[2])
+
   </script>
 
 </body>
