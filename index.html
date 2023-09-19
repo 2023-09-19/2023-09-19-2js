@@ -37,7 +37,25 @@
     console.log(Object.keys(student))
     console.log(Object.values(student))
 
+    //Object.keys로 반환된 배열값을 바로 반복처리
     Object.keys(student).forEach(key => console.log(student[key]))
+
+    //fillter : 기존 배열값의 불변성을 유지하면서 특정조건에 부합되는 새로운 배열을 반환
+    const studentDB = [
+      { name: 'David', age: 20, 'hobby': 'game' },
+      { name: 'Emaily', age: 18, 'hobby': 'music' },
+      { name: 'peter', age: 20, }
+    ];
+
+    const result = studentDB.map((data) => {
+      return data.hobby;
+    });
+    console.log(result); //['game','music','undefined']
+
+    //fillter의 인수로 조건식을 넣어서 
+    //해당 조건에 부합되는 값만 배열로 반환
+    const abc = result.filter(data => data !== undefined)
+    console.log(abc)
   </script>
 
 </body>
