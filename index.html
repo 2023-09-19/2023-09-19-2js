@@ -10,24 +10,14 @@
 <body>
 
   <script>
-    const student1 = {
-      name: 'david', // property (key,value)
-      age: 20,
-      'is-Female': false, // property key 에 -입력하면 -라는 연산자로 처리되므로 명시적으로 문자열처리
-    }
-    //console.log(student1.is-Female);
-    //객체에 property에 접근하는 방법
-    //객체명.property(key)
-    //객체명['property-key']
-    console.log(student1['is-Female'])
+    let name = 'abc';
 
-    student1.name = 'Andy';
-    console.log(student1);
-    student1 = 'Emily';
-    console.log(student1);
-    //const 방식으로 변수를 선언하고 값을 할당했더라도
-    //기존의 자료형 구조를 유지하면서 값 변경은 가능하지만
-    //아예 새로운 자료형으로 재할당은 불가능
+    //es7에서의 새로운 문법:객체의 property key값을 변수로 치환가능
+    const obj = {
+      name: 'Andy',
+    }
+
+    console.log(obj.abc);
 
   </script>
 
