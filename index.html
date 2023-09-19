@@ -9,29 +9,28 @@
 
 <body>
 
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+  </ul>
+
   <script>
-    /*
-      forEach vs map
-    */
-    const colors = ['red', 'green', 'blue'];
+    const lis = document.querySelectorAll('li');
+    console.log(lis);
 
-    //반복기능만 있음
-    const result1 = colors.forEach((data, index) => {
+    //forEach 순수배열이 아닌 유사배열도 반복가능
+    lis.forEach((data) => {
       console.log(data);
-      console.log(index);
     })
-    console.log('result1', result1)
 
-    //반복기능 + 기존배열값을 deep copy반환
-    //map은기존의 원본 배열을 훼손시키지 않으면서 새로운 배열을 반환하는 불변성 유지 가능
-    const result2 = colors.map((data, index) => {
+    //순수배열만 반복가능
+    //quertSelectorAll로 받아지는 배열값은 유사배열이기 때문에 map으로 반복처리 불가능
+    //해결방법 - 유사배열을 순수배열로 변환
+    const newlis = Array.from(lis); // 유사배열을 인수로 받아서 순수배열형태로 반환
+    newlis.map((data) => {
       console.log(data);
-      console.log(index);
-      return data;
     })
-    console.log('result2', result2)
-
-    result2[0] = 'hotpink';
 
   </script>
 
